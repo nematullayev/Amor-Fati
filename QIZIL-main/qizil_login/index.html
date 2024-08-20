@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="ICON" href="./IMG/Hacker_logo_2-removebg-preview.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./STYLE.CSS" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>QIZIL GURUHGA A`ZO BO`LISH</title>
+  </head>
+  <body>
+    <div class="tekst">AMOR FATI</div>
+    <form action="" method="get" class="con">
+      <button onclick="alicho()" type="submit">ARIZA YUBORISH</button>
+      <label for="fname">Ismingiz va Familyangiz </label>
+      <input id="fname" type="text" required />
+      <label for="email">Pubg Id raqamingiz</label>
+      <input id="email" type="number" required minlength="10" />
+
+      <label for="password">PUBG user name</label>
+
+      <input id="password" type="text" required />
+      <label for="password">Telegram user name</label>
+
+      <input id="kere" type="text" required />
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function alicho() {
+        let fname = document.getElementById("fname").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let nike = document.getElementById("kere").value;
+
+        event.preventDefault();
+        let telegram_bot_id = "7045945237:AAEDmcuoX22HE23jiuztBAvzDziptzK0Y2k";
+
+        let chat_id = 6665877403;
+        let message = `🔴\nIsmi va Familyasi : ${fname}; \nPubg id : ${email}; \nPubg user name: ${password};\nTelegram user name: ${nike};\n🔴`;
+        let settings = {
+          async: true,
+          crossDomain: true,
+          url:
+            "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache",
+          },
+          data: JSON.stringify({
+            chat_id: chat_id,
+            text: message,
+          }),
+        };
+        $.ajax(settings).done(function (response) {
+          alert(
+            "🔴QIZIL GURUH JAMOASIGA ARIZANGIZ YUBORILDI ARIZANGIZ KO`RIB CHIQIB SIZGA ALOQAGA CHIQAMIZ🔴"
+          );
+
+          // window.location.href = "https://t.me/+3qy0lW6oe-JmZTJi";
+        });
+        document.getElementById("fname").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("nike").value = "";
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
